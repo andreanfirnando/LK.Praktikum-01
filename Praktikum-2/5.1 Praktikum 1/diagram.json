@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -91.3, "left": 23.8, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 108.8,
+      "left": -210.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "ldr1:VCC", "red", [ "h18.9", "v57.6" ] ],
+    [ "esp:GND.1", "ldr1:GND", "black", [ "h28.5", "v76.7", "h-192" ] ],
+    [ "ldr1:AO", "esp:VP", "orange", [ "h48", "v-211.6" ] ]
+  ],
+  "dependencies": {}
+}
